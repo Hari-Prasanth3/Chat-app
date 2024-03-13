@@ -4,7 +4,7 @@ const fs = require('fs');
 
 // Create an HTTP server
 const server = http.createServer((req, res) => {
-    fs.readFile('index.html', (err, data) => {
+    fs.readFile('public/index.html', (err, data) => {
         if (err) {
             res.writeHead(500);
             return res.end('Error loading index.html');
@@ -37,7 +37,7 @@ wss.on('connection', (ws) => {
 });
 
 // Start the HTTP server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
     console.log(`WebSocket server is running on port ${PORT}`);
 });
